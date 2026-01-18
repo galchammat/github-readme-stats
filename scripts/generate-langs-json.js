@@ -21,6 +21,14 @@ axios
       languageColors[lang] = languages[lang].color;
     });
 
+    // Apply custom color overrides
+    const customColors = {
+      Python: "#ffd43B", // Golden yellow (custom)
+      Lua: "#7b68ee", // Medium purple (custom)
+    };
+
+    Object.assign(languageColors, customColors);
+
     //Debug Print
     //console.dir(languageColors);
     fs.writeFileSync(
