@@ -57,7 +57,7 @@ const error = {
 
 const langs = {
   HTML: {
-    color: "#0f0",
+    color: "#e34c26",
     name: "HTML",
     size: 250,
   },

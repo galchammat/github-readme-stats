@@ -6,6 +6,10 @@ import { excludeRepositories } from "../common/envs.js";
 import { CustomError, MissingParamError } from "../common/error.js";
 import { wrapTextMultiline } from "../common/fmt.js";
 import { request } from "../common/http.js";
+import { createRequire } from "module";
+
+const require = createRequire(import.meta.url);
+const languageColors = require("../common/languageColors.json");
 
 /**
  * Top languages fetcher object.
@@ -154,6 +158,13 @@ const fetchTopLanguages = async (
       result[key] = repoNodes[key];
       return result;
     }, {});
+
+  // Apply custom language colors from languageColors.json
+  Object.keys(topLangs).forEach((lang) => {
+    if (languageColors[lang]) {
+      topLangs[lang].color = languageColors[lang];
+    }
+  });
 
   return topLangs;
 };

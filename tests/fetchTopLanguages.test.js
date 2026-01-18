@@ -67,7 +67,7 @@ describe("FetchTopLanguages", () => {
     let repo = await fetchTopLanguages("anuraghazra", [], 0.5, 0.5);
     expect(repo).toStrictEqual({
       HTML: {
-        color: "#0f0",
+        color: "#e34c26",
         count: 2,
         name: "HTML",
         size: 20.000000000000004,
@@ -87,7 +87,7 @@ describe("FetchTopLanguages", () => {
     let repo = await fetchTopLanguages("anuraghazra", ["test-repo-1"]);
     expect(repo).toStrictEqual({
       HTML: {
-        color: "#0f0",
+        color: "#e34c26",
         count: 1,
         name: "HTML",
         size: 100,
@@ -107,7 +107,7 @@ describe("FetchTopLanguages", () => {
     let repo = await fetchTopLanguages("anuraghazra", [], 1, 0);
     expect(repo).toStrictEqual({
       HTML: {
-        color: "#0f0",
+        color: "#e34c26",
         count: 2,
         name: "HTML",
         size: 200,
@@ -127,7 +127,7 @@ describe("FetchTopLanguages", () => {
     let repo = await fetchTopLanguages("anuraghazra", [], 0, 1);
     expect(repo).toStrictEqual({
       HTML: {
-        color: "#0f0",
+        color: "#e34c26",
         count: 2,
         name: "HTML",
         size: 2,
